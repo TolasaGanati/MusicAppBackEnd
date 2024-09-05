@@ -5,11 +5,13 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const songRouter = require('./routes/songs'); // Import the songs routes
+const songRouter = require('./routes/songs'); 
 
 // Middleware
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: 'https://music-app-front-end-swart.vercel.app/', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));app.use(express.json());
 
 // Routes
 app.use('/api/songs', songRouter); 
