@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const Song = require('../models/Song');
 const router = express.Router();
 
