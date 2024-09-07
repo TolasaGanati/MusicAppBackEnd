@@ -12,7 +12,7 @@ app.use(cors({
   origin: (origin, callback) => {
     const allowedOrigins = [
       'http://localhost:5173', // Development URL
-      'https://music-app-front-end-swart.vercel.app', // Production URL
+      'https://music-app-front-end-5iqg-l3hrboh4j-tolasaganatis-projects.vercel.app/', // Production URL
     ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
