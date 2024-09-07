@@ -9,19 +9,10 @@ const songRouter = require('./routes/songs');
 
 // Middleware
 app.use(cors({
-  origin: (origin, callback) => {
-    const allowedOrigins = [
-      //'http://localhost:5173', // Development URL
-      'https://music-app-front-end-5iqg-l3hrboh4j-tolasaganatis-projects.vercel.app/', // Production URL
-    ];
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: '*', // Allow all origins
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
+
 
 
 app.use(express.json());
@@ -45,5 +36,5 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on..... http://localhost:${PORT}`);
 });
