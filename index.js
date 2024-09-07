@@ -8,10 +8,11 @@ const PORT = process.env.PORT || 10000;
 const songRouter = require('./routes/songs');
 
 // Middleware
-app.use(cors({
-  origin: '*', // Allow all origins
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-}));
+const allowedOrigins = [
+  'http://localhost:5173', // Development URL
+  'https://music-app-front-end-5iqg-l3hrboh4j-tolasaganatis-projects.vercel.app' // Production URL without trailing slash
+];
+
 
 
 
