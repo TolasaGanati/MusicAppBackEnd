@@ -11,7 +11,7 @@ const songRouter = require('./routes/songs');
 app.use(cors({
   origin: (origin, callback) => {
     const allowedOrigins = [
-      'http://localhost:5173', // Development URL
+      //'http://localhost:5173', // Development URL
       'https://music-app-front-end-swart.vercel.app', // Production URL
     ];
     if (!origin || allowedOrigins.includes(origin)) {
